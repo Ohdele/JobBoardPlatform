@@ -11,8 +11,7 @@ Create a job board where users can post job listings and apply for jobs. This pr
 - `backend`: Contains Flask application code.
 - `java-services`: Contains Java code for additional features.
 
-## Contributing
-Feel free to submit issues or pull requests.
-
-## License
-This project is licensed under the MIT License.
+## Getting Started
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Ohdele/JobBoardPlatform.git
