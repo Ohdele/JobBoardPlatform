@@ -24,7 +24,7 @@ Create a job board where users can post job listings and apply for jobs. This pr
 ## Backend Development (Flask)
 
 ### Overview
-I focused on setting up the backend for the JobBoardPlatform project using Flask. This involved initializing a Flask project, configuring the environment, developing API endpoints, and testing them. 
+I focused on setting up the backend for the JobBoardPlatform project using Flask. This involved initializing a Flask project, configuring the environment, installing necessary packages, and creating initial files for the project structure.
 
 ### Backend Setup
 
@@ -42,46 +42,12 @@ I focused on setting up the backend for the JobBoardPlatform project using Flask
      pip install Flask
      ```
 
-2. **Database Setup:**
-   - Installed necessary packages:
-     ```bash
-     pip install SQLAlchemy psycopg2-binary
-     ```
-   - Configured PostgreSQL/MySQL.
-   - Created models for Users, Job Listings, and Applications.
+2. **Created Initial Files:**
+   - `app.py`: Main application file that initializes Flask and sets up the home route.
+   - `auth.py`: Handles user authentication routes (e.g., login, registration).
+   - `config.py`: Contains configuration settings for the Flask application (e.g., database URI).
+   - `models.py`: Defines database models (e.g., User, Job Listings) using SQLAlchemy.
+   - `test_auth.py`: Contains unit tests for authentication routes.
+   - `.gitignore`: Specifies files and directories to be ignored by Git.
 
-3. **API Development:**
-   - Implemented CRUD endpoints for:
-     - User Registration/Login
-     - Create/Read/Update/Delete Job Listings
-     - Apply for Jobs
-   - Secured endpoints with JWT authentication:
-     ```bash
-     pip install Flask-JWT-Extended
-     ```
-
-4. **Testing:**
-   - Wrote unit tests using `pytest`.
-   - Wrote integration tests for API endpoints.
-
-### Route Workflow
-
-- **User Registration/Login:**
-  - **Endpoint:** `POST /login`
-  - **Description:** Authenticate a user and return a JWT token.
-
-- **Create Job Listing:**
-  - **Endpoint:** `POST /jobs`
-  - **Description:** Create a new job listing.
-
-- **Read Job Listings:**
-  - **Endpoint:** `GET /jobs`
-  - **Description:** Retrieve a list of job listings.
-
-- **Update Job Listing:**
-  - **Endpoint:** `PUT /jobs/<job_id>`
-  - **Description:** Update a specific job listing.
-
-- **Delete Job Listing:**
-  - **Endpoint:** `DELETE /jobs/<job_id>`
-  - **Description:** Delete a specific job listing.
+This reflects the steps I have completed in the backend setup so far.
