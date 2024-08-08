@@ -21,3 +21,6 @@ class Application(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     job_listing_id = db.Column(db.Integer, db.ForeignKey('job_listing.id'), nullable=False)
     date_applied = db.Column(db.DateTime, nullable=False)
+
+    user = db.relationship('User', backref=db.backref('applications', lazy=True))
+    job_listing = db.relationship('JobListing', backref=db.backref('applications', lazy=True))
