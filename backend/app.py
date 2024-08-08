@@ -1,23 +1,25 @@
-from flask import Flask
+from flask import Flask, jsonify
 from flask_sqlalchemy import SQLAlchemy
-from config import Config
-from auth import auth
+from flask_migrate import Migrate
+from backend.config import Config
 
 app = Flask(__name__)
 app.config.from_object(Config)
-db = SQLAlchemy(app)
 
-from flask_jwt_extended import JWTManager
-jwt = JWTManager(app)
+db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 @app.route('/')
 def home():
-    return 'Hello, Flask!'
+    return "Hello, World!"
 
-app.register_blueprint(auth)
-
-with app.app_context():
-    db.create_all()
+@app.route('/data', methods=['GET'])
+def get_data():
+    # Example query
+    result = db.session.execute('SELECT * FROM your_table_name').fetchall()
+    # Convert result to a list of dictionaries
+    data = [{'id': row[0], 'column_name': row[1]} for row in result]
+    return jsonify(data)
 
 if __name__ == '__main__':
     app.run(debug=True)
