@@ -95,7 +95,7 @@ This API provides endpoints for job management, including user authentication an
 
 1. Clone the repository:
     ```
-    git clone https://github.com/your-username/job-board-api.git
+    git clone https://github.com/Ohdele/JobBoardPlatform.git
     ```
 
 2. Navigate to the project directory:
