@@ -3,13 +3,6 @@ from flask import Blueprint, request, jsonify
 
 auth = Blueprint('auth', __name__)
 
-@auth.route('/register', methods=['POST'])
-def register():
-    username = request.json.get('username', None)
-    password = request.json.get('password', None)
-    # Implement user registration logic here (e.g., save user to database)
-    return jsonify(message="User registered successfully"), 201
-
 @auth.route('/login', methods=['POST'])
 def login():
     username = request.json.get('username', None)
